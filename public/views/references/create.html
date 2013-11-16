@@ -1,0 +1,37 @@
+<div ng-controller="RefCtrl">
+    <h2>Create a reference...</h2>
+    <form class="form-horizontal" data-ng-submit="create()">
+        <div class="control-group">
+            <label class="control-label">Title:</label>
+            <div class="controls">
+                <input type="text" data-ng-model="ref.title" placeholder="Title" ng-required="true">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Text:</label>
+            <div class="controls">
+                <textarea data-ng-model="ref.content" cols="30" rows="10" placeholder="Content"></textarea>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">URL:</label>
+            <div class="controls">
+                <input type="text" data-ng-model="ref.url" placeholder="link to reference" ng-required="true">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Type:</label>
+            <div class="controls">
+                <select ng-options="t.name for t in types" ng-model="selectedType"></select>
+            </div>
+        </div>
+        Current Rating is: {{rating}} <br/>
+        <bmrating rating-value="rating" max="10" on-rating-selected="saveRatingToServer(rating)">
+
+        </bmrating>
+   </form>
+
+
+</div>
+
+

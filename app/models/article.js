@@ -3,7 +3,7 @@
  */
 var mongoose = require('mongoose'),
     config = require('../../config/config'),
-    Schema = mongoose.Schema;
+    Schema = mongoose.Schema
 
 
 /**

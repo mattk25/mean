@@ -30,7 +30,6 @@ exports.signup = function(req, res) {
         user: new User()
     });
 };
-
 /**
  * Logout
  */
