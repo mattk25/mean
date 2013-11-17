@@ -73,8 +73,11 @@ module.exports = function(app, passport, auth) {
     //Finish with setting up the articleId param
     app.param('articleId', articles.article);
 
-    //app.post('/references', auth.requiresLogin, references.create);
-
+    var reference = require('../app/controllers/reference');
+    app.post('/references', auth.requiresLogin, reference.create);
+    app.put('/references/:referenceId', auth.requiresLogin, auth.reference.hasAuthorization, reference.update);
+    app.get('/references/:referenceId', reference.show);
+    app.param('referenceId', reference.reference)
 
 
     //Home route

@@ -21,6 +21,10 @@ window.app.config(['$routeProvider',
             templateUrl: 'views/references/create.html',
             controller: 'RefCtrl'
         }).
+        when('/references/:referenceId', {
+                templateUrl: 'views/references/view.html',
+                controller: 'RefCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });

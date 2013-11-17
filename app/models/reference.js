@@ -22,5 +22,22 @@ var referenceSchema = Schema({
     book    : [{type: Schema.Types.ObjectId, ref: 'Book'}]
 });
 
-exports.referenceSchema = referenceSchema;
+/**
+ * Validations
+ */
+referenceSchema.path('title').validate(function(title) {
+    return title.length;
+}, 'Title cannot be blank');
+
+/**
+ * Statics
+ */
+referenceSchema.statics = {
+    load: function(id, cb) {
+        this.findOne({
+            _id: id
+        }).populate('user', 'name username').exec(cb);
+    }
+};
+
 module.exports = mongoose.model('Reference', referenceSchema);
