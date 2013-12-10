@@ -1,3 +1,4 @@
+
 module.exports = function(grunt) {
     // Project Configuration
     grunt.initConfig({
@@ -14,6 +15,8 @@ module.exports = function(grunt) {
                 files: ['public/js/**', 'app/**/*.js'],
                 tasks: ['jshint'],
                 options: {
+
+
                     "livereload": true
                 }
             },
